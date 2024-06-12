@@ -1,10 +1,6 @@
 package com.odev.mobilodev2
-
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -43,20 +39,20 @@ class MainActivity : AppCompatActivity() {
 
     private fun showAddTaskDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("New Task")
+        builder.setTitle("YENİ GÖREV")
 
         val input = EditText(this)
         input.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(input)
 
-        builder.setPositiveButton("Add") { dialog, which ->
+        builder.setPositiveButton("EKLE") { dialog, which ->
             val newTaskTitle = input.text.toString()
             if (newTaskTitle.isNotEmpty()) {
                 val newItem = ToDoItem(toDoList.size + 1, newTaskTitle, false)
                 adapter.addItem(newItem)
             }
         }
-        builder.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
+        builder.setNegativeButton("GERİ") { dialog, which -> dialog.cancel() }
 
         builder.show()
     }

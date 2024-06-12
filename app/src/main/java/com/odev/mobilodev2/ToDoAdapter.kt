@@ -26,7 +26,7 @@ class ToDoAdapter(private val toDoList: MutableList<ToDoItem>) : RecyclerView.Ad
         holder.checkBoxDone.isChecked = currentItem.isDone
 
         holder.checkBoxDone.setOnCheckedChangeListener { buttonView, isChecked ->
-            // Mevcut durumu karşılaştır ve gereksiz güncellemeleri önle
+
             if (currentItem.isDone != isChecked) {
                 currentItem.isDone = isChecked
                 if (isChecked) {
